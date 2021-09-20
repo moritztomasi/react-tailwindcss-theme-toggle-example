@@ -1,4 +1,8 @@
-# Getting Started with Create React App
+# React + Tailwindcss Theme Toggle Example
+
+This project showcases a solution for implementing a theme toggle with Tailwindcss and React. The corresponding article for this repository can be found [here]().
+
+# Getting Started
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
