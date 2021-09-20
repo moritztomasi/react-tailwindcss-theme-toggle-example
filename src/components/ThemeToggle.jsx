@@ -1,10 +1,6 @@
 import { Switch } from "@headlessui/react";
 import { useEffect, useState } from "react";
 
-function joinClassNames(...classes) {
-  return classes.filter((elem) => elem != null && elem.length > 0).join(" ");
-}
-
 function ThemeToggle() {
   const [enabled, setEnabled] = useState(false);
 
@@ -41,18 +37,16 @@ function ThemeToggle() {
       className="relative inline-flex flex-shrink-0 h-6 transition-colors duration-200 ease-in-out bg-gray-200 border-2 border-transparent rounded-full cursor-pointer w-11 ring-0 dark:bg-gray-600"
     >
       <span
-        className={joinClassNames(
-          enabled ? "translate-x-5" : "translate-x-0",
-          "pointer-events-none relative inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200"
-        )}
+        className={`${
+          enabled ? "translate-x-5" : "translate-x-0"
+        } pointer-events-none relative inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200`}
       >
         <span
-          className={joinClassNames(
+          className={`${
             enabled
               ? "opacity-0 ease-out duration-100"
-              : "opacity-100 ease-in duration-200",
-            "absolute inset-0 h-full w-full flex items-center justify-center transition-opacity"
-          )}
+              : "opacity-100 ease-in duration-200"
+          } absolute inset-0 h-full w-full flex items-center justify-center transition-opacity`}
           aria-hidden="true"
         >
           <svg
@@ -73,12 +67,11 @@ function ThemeToggle() {
           </svg>
         </span>
         <span
-          className={joinClassNames(
+          className={`${
             enabled
               ? "opacity-100 ease-in duration-200"
-              : "opacity-0 ease-out duration-100",
-            "absolute inset-0 h-full w-full flex items-center justify-center transition-opacity"
-          )}
+              : "opacity-0 ease-out duration-100"
+          } absolute inset-0 h-full w-full flex items-center justify-center transition-opacity`}
           aria-hidden="true"
         >
           <svg
