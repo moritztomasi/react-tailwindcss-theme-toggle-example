@@ -1,18 +1,18 @@
 import { Switch } from "@headlessui/react";
 import { useEffect, useState } from "react";
 
+function prefersDarkTheme() {
+  return (
+    localStorage.theme === "dark" ||
+    (!("theme" in localStorage) &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches)
+  );
+}
+
 function ThemeToggle() {
   const [enabled, setEnabled] = useState(false);
 
   useEffect(() => {
-    function prefersDarkTheme() {
-      return (
-        localStorage.theme === "dark" ||
-        (!("theme" in localStorage) &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches)
-      );
-    }
-
     setEnabled(prefersDarkTheme());
   }, []);
 
