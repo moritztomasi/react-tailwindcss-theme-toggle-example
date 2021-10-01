@@ -10,11 +10,7 @@ function prefersDarkTheme() {
 }
 
 function ThemeToggle() {
-  const [enabled, setEnabled] = useState(false);
-
-  useEffect(() => {
-    setEnabled(prefersDarkTheme());
-  }, []);
+  const [enabled, setEnabled] = useState(prefersDarkTheme());
 
   useEffect(() => {
     if (enabled) {
